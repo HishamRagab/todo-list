@@ -1,0 +1,167 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Quicksand;
+}
+body {
+  height: 100%;
+  background-color: #f7f1f1;
+}
+.todo-list {
+  width: 500px;
+  padding: 50px;
+  background-color: #ff6666;
+  color: white;
+  box-shadow: -20px -20px 0px 0px #6464641a;
+  margin: 150px auto 50px;
+}
+
+/* ///////////////////////////////////////////////////////// */
+
+.header {
+  border-bottom: 1px solid #ffffff4d;
+}
+.header h1 {
+  font-size: 46px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+.header p {
+  margin: 5px 0 10px;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* ///////////////////////////////////////////////////////// */
+
+.list {
+  margin: 50px 0 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.list .item {
+  background-color: #ffffff1a;
+  padding: 20px 50px;
+  margin: 0 -50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.list .item .content {
+  position: relative;
+  font-size: 20px;
+  transition: 0.4s;
+}
+.list .item.done .content {
+  opacity: 0.6;
+}
+.list .item .content::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  top: 56%;
+  left: -10px;
+  background-color: white;
+  transition: 0.4s;
+}
+.list .item.done .content::before {
+  width: calc(100% + 20px);
+}
+.list .item .setting button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* ///////////////////////////////////////////////////////// */
+.add {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 35px 55px;
+  gap: 5px;
+}
+.add label {
+  font-size: 24px;
+  grid-area: 1/1/2/3;
+  align-self: center;
+}
+.add input {
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+  padding: 0 20px;
+  background-color: #f7f1f1;
+  font-size: 18px;
+}
+.add button {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  color: white;
+  border: 1px solid #ffffff4d;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.add button:hover {
+  background-color: #ff5e5e;
+}
+
+/* ///////////////////////////////////////////////////////// */
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #e8e2e2;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ff6666;
+}
+
+/* ///////////////////////////////////////////////////////// */
+
+@media (max-width: 550px) {
+  .todo-list {
+    width: 350px;
+    padding: 30px;
+    box-shadow: -15px -15px 0px 0px #6464641a;
+  }
+  .header h1 {
+    font-size: 36px;
+    letter-spacing: 1px;
+  }
+  .header p {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .list {
+    margin: 30px 0 30px;
+  }
+  .list .item {
+    padding: 15px 30px;
+    margin: 0 -30px;
+  }
+  .list .item .content {
+    font-size: 18px;
+  }
+  .add {
+    grid-template-rows: 30px 50px;
+  }
+  .add label {
+    font-size: 22px;
+  }
+  .add input {
+    font-size: 15px;
+  }
+  .add button {
+    font-size: 12px;
+  }
+}
+
+/* ///////////////////////////////////////////////////////// */
